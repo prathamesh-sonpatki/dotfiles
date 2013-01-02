@@ -1,0 +1,51 @@
+[user]
+    email = csonpatki@gmail.com
+    name = Prathamesh Sonpatki
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+    pager = true
+
+[color "branch"]
+    current = blue bold
+    local = yellow bold
+    remote = green bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = green bold
+    old = red bold
+    new = blue bold
+
+[color "status"]
+    added = yellow bold
+    changed = green bold
+    untracked = cyan bold
+
+[core]
+    pager = less -FRSX
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /home/cha1tanya/.gitignore_global
+
+[alias]
+  co = checkout
+  c = commit -m
+  a = add
+  aa = !git add -u && git add . && git status
+  cob = checkout -b
+  up = !git fetch origin && git rebase origin/master
+  ir = !git rebase -i origin/master
+  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
+  count = !git shortlog -s -n
+  rup = !git remote update --prune
+  gpr = !git pull --rebase
+  msg = commit --allow-empty -m
+
+[help]
+  autocorrect = 1
+[github]
+	user = prathamesh-sonpatki
+	oauth-token = 63d2325de0fb93380efb40d552a02a88ee0219e5
