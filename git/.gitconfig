@@ -29,6 +29,7 @@
     pager = less -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = /home/cha1tanya/.gitignore_global
+	autocrlf = true
 
 [alias]
   co = checkout
@@ -43,9 +44,12 @@
   rup = !git remote update --prune
   gpr = !git pull --rebase
   msg = commit --allow-empty -m
-
+  lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+  lg = !"git lg1"
 [help]
   autocorrect = 1
 [github]
 	user = prathamesh-sonpatki
-	oauth-token = 63d2325de0fb93380efb40d552a02a88ee0219e5
+[push]
+	default = matching
