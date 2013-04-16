@@ -1,4 +1,5 @@
 require "rubygems"
+require "irb/completion"
 
 def time(times = 1)
   require 'benchmark'
@@ -7,32 +8,44 @@ def time(times = 1)
   ret
 end
 
-# Check for presence of required gems. If not present, install the gems
-["wirble", "awesome_print"].each do |gem|
-
-  begin
-    gem "#{gem}"
-  rescue Gem::LoadError
-    `gem install #{gem}`
-    Gem.clear_paths            # clear the gem path; so installed gem will be added to path
-  end
-
+# interactive editor: use vim from within irb
+begin
+  require 'interactive_editor'
+rescue LoadError => err
+  warn "Couldn't load interactive_editor: #{err}"
 end
 
-require "wirble"
-require "awesome_print"
-require "irb"
+# awesome print
+begin
+  require 'awesome_print'
+  AwesomePrint.irb!
+rescue LoadError => err
+  warn "Couldn't load awesome_print: #{err}"
+end
 
-# install and use the wirble gem, it does a lot of neat stuff
-Wirble.init
-Wirble.colorize
-# the default colors suck, mod to use your own
-colors = Wirble::Colorize.colors.merge({
-   # set the comma color to blue
-   :comma => :green,
-   :refers => :green,
-})
-Wirble::Colorize.colors = colors
+# configure irb
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+
+# irb history
+IRB.conf[:EVAL_HISTORY] = 1000
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = File::expand_path("~/.irbhistory")
+
+class Object
+  def interesting_methods
+    case self.class
+    when Class
+      self.public_methods.sort - Object.public_methods
+    when Module
+      self.public_methods.sort - Module.public_methods
+    else
+      self.public_methods.sort - Object.new.public_methods
+    end
+  end
+end
+
+# Loading Rails specific settings
+# load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
 
 # Custom alias
 alias p ap
