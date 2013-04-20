@@ -46,7 +46,7 @@ alias er="/home/cha1tanya/Projects/sources/rails/railties/bin/rails"
 alias ecoffee="/home/cha1tanya/Projects/sources/coffee-script/bin/coffee"
 alias ecake="/home/cha1tanya/Projects/sources/coffee-script/bin/cake"
 alias r="rails"
-
+alias be="bundle exec"
 # Custom PATHs 
 
 # ~/bin
