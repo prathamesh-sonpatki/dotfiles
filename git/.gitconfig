@@ -48,10 +48,10 @@
   lg = !"git lg1"
   pru = pull --rebase upstream master
   pro = pull --rebase origin master
+  cr  = clone --recursive
 [help]
   autocorrect = 1
 [github]
 	user = prathamesh-sonpatki
-	oauth-token = 63d2325de0fb93380efb40d552a02a88ee0219e5
 [push]
 	default = matching
