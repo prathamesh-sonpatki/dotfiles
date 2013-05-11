@@ -25,7 +25,7 @@ export EDITOR=emacs-24.3.50
 
 # My Custom aliases
 
-alias jem='jruby -S gem install'
+alias jem='jruby -S gem'
 alias jspec='jruby -S rspec'
 alias gitkall='gitk --all'
 alias ruby19='rvm use 1.9.3'
