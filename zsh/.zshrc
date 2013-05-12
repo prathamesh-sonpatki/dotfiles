@@ -27,6 +27,7 @@ export EDITOR=emacs-24.3.50
 
 alias jem='jruby -S gem'
 alias jspec='jruby -S rspec'
+alias jrails='jruby -S rails'
 alias gitkall='gitk --all'
 alias ruby19='rvm use 1.9.3'
 alias ruby2='rvm use 2.0.0-p0'
