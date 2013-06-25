@@ -48,6 +48,8 @@ alias ecoffee="/home/cha1tanya/Projects/sources/coffee-script/bin/coffee"
 alias ecake="/home/cha1tanya/Projects/sources/coffee-script/bin/cake"
 alias r="rails"
 alias be="bundle exec"
+alias irb="irb --simple-prompt"
+
 # Custom PATHs 
 
 # ~/bin
