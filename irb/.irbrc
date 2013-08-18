@@ -1,5 +1,6 @@
 require "rubygems"
 require "irb/completion"
+require 'irb/ext/save-history'
 
 def time(times = 1)
   require 'benchmark'
@@ -25,6 +26,7 @@ end
 
 # configure irb
 IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:AUTO_INDENT] = true
 
 # irb history
 IRB.conf[:EVAL_HISTORY] = 1000
