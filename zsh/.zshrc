@@ -10,16 +10,14 @@ plugins=(git rails textmate ruby lighthouse gem ant bundler battery git-flow git
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-
 # Torquebox and JBOSS related settings
 export JRUBY_OPTS=--1.9
 export TORQUEBOX_HOME=$HOME/torquebox-2.1.2
 export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
 # Export Emacs-24.3.50 as default editor
+export EDITOR=emacs-24.3
 
-export EDITOR=emacs-24.3.50
 # Adding rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -50,7 +48,7 @@ alias r="rails"
 alias be="bundle exec"
 alias irb="irb --simple-prompt"
 
-# Custom PATHs 
+# Custom PATHs
 
 # ~/bin
 export PATH=$PATH:/home/cha1tanya/bin/
@@ -76,7 +74,34 @@ export PATH=$PATH:/home/cha1tanya/Projects/sources/rcodetools/bin
 export PATH=$PATH:/home/cha1tanya/Projects/sources/AWS-ElasticBeanstalk-CLI-2.3.1/eb/linux/python2.7
 # coffee-script edge
 export PATH=$PATH:/home/cha1tanya/Projects/sources/coffee-script/bin
-# ------------------------------------------------------------------------------------------
+# rvm
+export PATH=$PATH:$HOME/.rvm/bin
 
-# Torquebox Bug
-export CLASSPATH=$CLASSPATH:/home/cha1tanya/.rvm/gems/jruby-1.6.8@torked/gems/jdbc-mysql-5.1.22/lib/mysql-connector-java-5.1.22.jar
+# ZSH and emacs
+
+if [ -n "$INSIDE_EMACS" ]; then
+  chpwd() { print -P "\033AnSiTc %d" }
+  print -P "\033AnSiTu %n"
+  print -P "\033AnSiTc %d"
+fi
+
+prompt_eterm_precmd () {
+  case $TERM in
+    xterm*)
+      print -Pn "\e]0;%n@%m:%~ (%l)\a"
+      ;;
+    eterm-color*)
+      print -P "\eAnSiTh %m"
+      print -P "\eAnSiTu %n"
+      print -P "\eAnSiTc %~"
+      ;;
+  esac
+}
+
+if [ "${TERM}x" = "eterm-colorx" ]
+then
+  alias e='print -P "\eAnSiTe"'
+  alias x='print -P "\eAnSiTx"'
+else
+  alias e='emacsclient -n -t -a vim'
+fi
