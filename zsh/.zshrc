@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # ZSH Theme
-ZSH_THEME="wedisagree"
+ZSH_THEME="frisk"
 
 # plugins
 plugins=(git rails textmate ruby lighthouse gem ant bundler battery git-flow github heroku jruby mvn node python rails3 rake ssh-agent thor yum rvm lein)
@@ -17,6 +17,7 @@ export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
 # Export Emacs-24.3.50 as default editor
 export EDITOR=emacs-24.3
+export ALTERNATE_EDITOR=""
 
 # Adding rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -47,6 +48,8 @@ alias ecake="/home/cha1tanya/Projects/sources/coffee-script/bin/cake"
 alias r="rails"
 alias be="bundle exec"
 alias irb="irb --simple-prompt"
+alias et='emacsclient -t'
+alias ec='emacsclient -c'
 
 # Custom PATHs
 
