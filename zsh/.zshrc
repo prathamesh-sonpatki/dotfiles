@@ -64,7 +64,7 @@ export PATH=$PATH:/home/cha1tanya/Projects/sources/jruby/bin/
 # Heroku
 export PATH=$PATH:/usr/local/heroku/bin
 # Scala
-export PATH=$PATH:/home/cha1tanya/Projects/scala-coursera/sbt/bin
+export PATH=$PATH:/home/cha1tanya/Projects/sources/scala-2.9.3/bin/
 # Android
 export PATH=$PATH:/home/cha1tanya/Projects/sources/adt-bundle-linux-x86_64/sdk/tools
 export PATH=$PATH:/home/cha1tanya/Projects/sources/adt-bundle-linux-x86_64/sdk/platform-tools
