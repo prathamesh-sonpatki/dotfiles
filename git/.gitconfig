@@ -49,6 +49,9 @@
   pru = pull --rebase upstream master
   pro = pull --rebase origin master
   cr  = clone --recursive
+  ribbon = tag --force _ribbon upstream/master
+  catchup = log --patch --reverse --topo-order _ribbon..upstream/master
+
 [help]
   autocorrect = 1
 [github]
