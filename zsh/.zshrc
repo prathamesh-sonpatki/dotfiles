@@ -79,6 +79,20 @@ export PATH=$PATH:/home/cha1tanya/Projects/sources/AWS-ElasticBeanstalk-CLI-2.3.
 export PATH=$PATH:/home/cha1tanya/Projects/sources/coffee-script/bin
 # rvm
 export PATH=$PATH:$HOME/.rvm/bin
+# sbt
+export PATH=$PATH:$HOME/home/cha1tanya/bin/sbt/bin/sbt
+#rubinius
+#export PATH=$PATH:/home/cha1tanya/Projects/sources/rubinius/bin
+# Go
+export PATH=$PATH:/usr/local/go/bin
+# gopath
+export GOPATH=/home/cha1tanya/gocode
+# javafx
+export JFX_DIR=/home/cha1tanya/Downloads/JavaFXSceneBuilder1.1/runtime/jre/lib
+# heroku
+export PATH=$PATH:/home/cha1tanya/bin/heroku-client/bin
+# Cask
+export PATH=$PATH:/home/cha1tanya/.cask/bin
 
 # ZSH and emacs
 
