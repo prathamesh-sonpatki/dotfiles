@@ -11,18 +11,18 @@
 
 [color "branch"]
     current = blue bold
-    local = yellow bold
-    remote = green bold
+    local   = yellow bold
+    remote  = green bold
 
 [color "diff"]
     meta = yellow bold
     frag = green bold
-    old = red bold
-    new = blue bold
+    old  = red bold
+    new  = blue bold
 
 [color "status"]
-    added = yellow bold
-    changed = green bold
+    added     = yellow bold
+    changed   = green bold
     untracked = cyan bold
 
 [core]
